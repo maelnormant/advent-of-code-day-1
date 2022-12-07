@@ -1,6 +1,6 @@
-most_calories = 0
 calories = 0
 tables = []
+sums = []
 
 with open("input.txt") as file:
     for line in file:
@@ -9,8 +9,11 @@ for i, calorie in enumerate(tables):
     if calorie != "\n" and calorie != "end\n":
         calories += int(calorie)
     if tables[i+1] == "\n":
-        if calories > most_calories:
-            most_calories = calories
+        sums.append(calories)
         calories = 0
     if tables[i+1] == "end\n":break
-print(most_calories)
+sums.sort()
+print("the most calories :")
+print(sums[-1])
+print("the sum of the three most calories :")
+print(sums[-1]+sums[-2]+sums[-3])
