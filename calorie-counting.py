@@ -1,9 +1,12 @@
+import csv
+
 most_calories = 0
 calories = 0
 tables = []
 
-with open("input.txt") as file:
-    for line in file:
+with open('input.csv') as csv_file:
+    reader = csv.reader(csv_file, delimiter=',')
+    for line in csv_file:
         tables.append(line)
 for i, calorie in enumerate(tables):
     if calorie != "\n" and calorie != "end\n":
