@@ -9,7 +9,6 @@ with open('input.csv') as csv_file:
     for line in reader:
         tables.append(line)
 for i, calorie in enumerate(tables):
-    print(calorie)
     if len(calorie) == 1:
         calories += int(calorie[0])
     if calorie != tables[-1]:
@@ -17,7 +16,8 @@ for i, calorie in enumerate(tables):
             sums.append(calories)
             calories = 0
 sums.sort()
+sums.reverse()
 print("the most calories :")
-print(sums[-1])
+print(sums[0])
 print("the sum of the three most calories :")
-print(sums[-1]+sums[-2]+sums[-3])
+print(sum(sums[0:3]))
