@@ -5,9 +5,9 @@ with open("input.txt") as file:
     map_object = map(calorie_counting, file.read().split("\n\n"))
     list_object = list(map_object)
     list_object.sort()
-    l = len(list_object)
+    list_object.reverse()
     
 print("the most calories :")
-print(list_object[-1])
+print(list_object[0])
 print("the sum of the three most calories :")
-print(sum(list_object[l-3:l]))
+print(sum(list_object[0:3]))
